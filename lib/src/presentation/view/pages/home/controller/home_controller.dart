@@ -23,6 +23,7 @@ class HomeController {
   String? oldKeyword;
   ApiInfo? _apiInfo;
 
+ /// Initializes the controller and its dependencies.
   void initController() {
     postsBloc = ApiDataBloc<PostModel>();
     postActionBloc = ApiDataBloc<PostModel>();
@@ -32,22 +33,26 @@ class HomeController {
     postNotifier = ValueNotifier([]);
   }
 
+  /// Initializes the text field controllers.
   void initFieldsControllers() {
     titleNameController = TextEditingController();
     bodyNameController = TextEditingController();
   }
 
+  /// Disposes the text field controllers.
   void disposeFieldsControllers() {
     titleNameController?.dispose();
     bodyNameController?.dispose();
   }
 
+  /// Fetches data from the API.
   void getData() {
     // eventId = 'get_posts';
     _apiInfo ??= ApiInfo(endpoint: ApiRoute.posts.route);
     postsBloc.getData(info: _apiInfo!);
   }
 
+  /// Adds a new post using the data from the form.
   void addPost() {
     eventId = "add_post";
     formKey.currentState!.save();
@@ -67,11 +72,13 @@ class HomeController {
     );
   }
 
+  /// Deletes a post.
   void deleteUser(PostModel pPost) {
     eventId = 'delete_post';
     postActionBloc.deleteData(info: ApiInfo(endpoint: '${ApiRoute.posts.route}/${pPost.id}', apiMethod: ApiMethod.delete));
   }
 
+  /// Searches for posts with a given keyword.
   void search(String? keyword) {
     if (oldKeyword != null) {
       EasyDebounce.cancel(oldKeyword ?? '');
@@ -85,6 +92,7 @@ class HomeController {
     });
   }
 
+  /// Listens for actions and updates the UI accordingly.
   void listenOnActions(BuildContext context, ApiDataState<PostModel> state) {
     state.mapOrNull(
       loading: (
@@ -113,6 +121,7 @@ class HomeController {
     );
   }
 
+  /// Disposes the controller and its dependencies.
   void disposeController() {
     scrollController.dispose();
     postNotifier.dispose();
