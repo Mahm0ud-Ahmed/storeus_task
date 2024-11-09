@@ -42,10 +42,4 @@ Follow these steps to set up and run the application:
 
 ## Screenshots
 <!-- - **Home Screen**: Displays a list of posts with a search bar at the top. -->
-   <img src="screenshots/home_screen.png" width="250" />
-<!-- - **Post Details Screen**: Shows the details of a selected post. -->
-   <img src="screenshots/post_details_screen.png" width="250" />
-<!-- - **Add Post Screen**: Allows the user to add a new post. -->
-   <img src="screenshots/add_post_screen.png" width="250" />
-<!-- - **Search Results**: Displays the search results based on the entered text. -->
-   <img src="screenshots/search_results.png" width="250" />
+   <img src="screenshots/home_screen.png" width="250" /> <img src="screenshots/post_details_screen.png" width="250" /> <img src="screenshots/add_post_screen.png" width="250" /> <img src="screenshots/search_results.png" width="250" />
