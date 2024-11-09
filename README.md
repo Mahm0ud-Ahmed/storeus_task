@@ -4,8 +4,7 @@ This Flutter application, **Storeus Task**, demonstrates a simple CRUD (Create, 
 
 ## Project Details
 
-- **Flutter SDK**: 3.5.3
-- **Dart SDK**: Compatible with Flutter 3.5.3
+- **Dart SDK**: 3.5.3
 - **Flutter Version Used**: 3.24.3
 
 ## Features
